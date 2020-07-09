@@ -1,201 +1,77 @@
 import Head from 'next/head'
-
+import Button from 'react-bootstrap/Button';
+import { View, TextInput, TouchableOpacity, Image, Text, Linking } from 'react-native-web'
 const Home = () => (
-  <div className="container">
+  <div style={{ backgroundColor: '#3f51b5', minHeight: '100vh' }}>
+
     <Head>
-      <title>Create Next App</title>
+      <title>Bayaq</title>
       <link rel="icon" href="/favicon.ico" />
+      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
+    <div className='parent'>
+      <View style={{ paddingTop: '5vh', flexDirection: 'row' }}>
+        <Image
+          resizeMode='contain'
+          style={{
+            width: 50,
+            height: 50
+          }}
+          source='/icon.png' />
+        <Text style={{ marginLeft: 5, fontWeight: 'bold', color: 'white', fontSize: 40 }}>Bayaq</Text>
 
-    <main>
-      <h1 className="title">
-        Welcome to <a href="https://nextjs.org">Next.js!</a>
-      </h1>
+      </View>
+      <View style={{ justifyContent: 'flex-end' }}>
+        <Text style={{ fontWeight: '400', color: 'white', fontSize: 35, marginTop: 40 }}>The fastest way to pay your bills</Text>
+        <Text style={{ color: 'white', fontSize: 20, marginTop: 20 }}>With Bayaq, you can pay all your bills in one place.</Text>
+        <Text style={{ fontWeight: '400', color: 'white', fontSize: 20, marginTop: 30 }}>Get the Bayaq app today</Text>
 
-      <p className="description">
-        Get started by editing <code>pages/index.js</code>
-      </p>
+      </View>
+      <View style={{ flexDirection: 'column', marginTop: 10 }}>
+        <View style={{ flex: 1 }}>
+          <TouchableOpacity style={{ backgroundColor: '#429ef6', padding: 20, borderRadius: 10 }} onPress={() => Linking.openURL('https://apps.apple.com/my/app/bayaq/id1519715626')}>
+            <Text style={{ color: 'white', textAlign: 'center', fontWeight: 'bold' }}>Download for iOS</Text>
+          </TouchableOpacity>
+        </View>
+        <View style={{ flex: 1, marginTop: 20 }}>
+          <TouchableOpacity style={{ backgroundColor: '#429ef6', padding: 20, borderRadius: 10 }} onPress={() => Linking.openURL('https://play.google.com/store/apps/details?id=com.bayaqapp.www')}>
+            <Text style={{ color: 'white', textAlign: 'center', fontWeight: 'bold' }}>Download for Android</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
 
-      <div className="grid">
-        <a href="https://nextjs.org/docs" className="card">
-          <h3>Documentation &rarr;</h3>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+      <View style={{ padding: 5, alignItems: 'center', marginTop: 20 }}>
+        <Image resizeMode='contain' style={{
+          width: '100%',
+          height: '80vh',
+        }}
+          source='/iphone.png' />
 
-        <a href="https://nextjs.org/learn" className="card">
-          <h3>Learn &rarr;</h3>
-          <p>Learn about Next.js in an interactive course with quizzes!</p>
-        </a>
+      </View>
+      <View>
 
-        <a
-          href="https://github.com/zeit/next.js/tree/master/examples"
-          className="card"
-        >
-          <h3>Examples &rarr;</h3>
-          <p>Discover and deploy boilerplate example Next.js projects.</p>
-        </a>
 
-        <a
-          href="https://zeit.co/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          className="card"
-        >
-          <h3>Deploy &rarr;</h3>
-          <p>
-            Instantly deploy your Next.js site to a public URL with ZEIT Now.
-          </p>
-        </a>
-      </div>
-    </main>
+        <Text style={{ color: 'white', fontSize: 14, marginBottom: 10, marginTop: 30, textAlign: 'center' }}>
+          Copyright &copy; 2020 Bayaq PLT | Contact admin@bayaqapp.com | <TouchableOpacity onPress={() => Linking.openURL('https://www.bayaqapp.com/privacy')}><Text>Terms and Condition</Text></TouchableOpacity>
+        </Text>
 
-    <footer>
-      <a
-        href="https://zeit.co?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Powered by <img src="/zeit.svg" alt="ZEIT Logo" />
-      </a>
-    </footer>
+      </View>
+    </div>
 
-    <style jsx>{`
-      .container {
-        min-height: 100vh;
-        padding: 0 0.5rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
-
-      main {
-        padding: 5rem 0;
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
-
-      footer {
-        width: 100%;
-        height: 100px;
-        border-top: 1px solid #eaeaea;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      footer img {
-        margin-left: 0.5rem;
-      }
-
-      footer a {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
-
-      .title a {
-        color: #0070f3;
-        text-decoration: none;
-      }
-
-      .title a:hover,
-      .title a:focus,
-      .title a:active {
-        text-decoration: underline;
-      }
-
-      .title {
-        margin: 0;
-        line-height: 1.15;
-        font-size: 4rem;
-      }
-
-      .title,
-      .description {
-        text-align: center;
-      }
-
-      .description {
-        line-height: 1.5;
-        font-size: 1.5rem;
-      }
-
-      code {
-        background: #fafafa;
-        border-radius: 5px;
-        padding: 0.75rem;
-        font-size: 1.1rem;
-        font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-          DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-      }
-
-      .grid {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-wrap: wrap;
-
-        max-width: 800px;
-        margin-top: 3rem;
-      }
-
-      .card {
-        margin: 1rem;
-        flex-basis: 45%;
-        padding: 1.5rem;
-        text-align: left;
-        color: inherit;
-        text-decoration: none;
-        border: 1px solid #eaeaea;
-        border-radius: 10px;
-        transition: color 0.15s ease, border-color 0.15s ease;
-      }
-
-      .card:hover,
-      .card:focus,
-      .card:active {
-        color: #0070f3;
-        border-color: #0070f3;
-      }
-
-      .card h3 {
-        margin: 0 0 1rem 0;
-        font-size: 1.5rem;
-      }
-
-      .card p {
-        margin: 0;
-        font-size: 1.25rem;
-        line-height: 1.5;
-      }
-
-      @media (max-width: 600px) {
-        .grid {
-          width: 100%;
-          flex-direction: column;
+    <style jsx>
+      {`
+      width: 100%;
+      padding-left: 5%;
+      padding-right: 5%;
+      @media (min-width: 600px) {
+        .parent {
+          width: 50%;
+          margin-left: 25%;
+          padding-left: 0;
+          padding-right: 0;
         }
       }
-    `}</style>
 
-    <style jsx global>{`
-      html,
-      body {
-        padding: 0;
-        margin: 0;
-        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-          Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-      }
-
-      * {
-        box-sizing: border-box;
-      }
     `}</style>
   </div>
 )
