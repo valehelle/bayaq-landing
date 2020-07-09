@@ -2,12 +2,24 @@ import Head from 'next/head'
 import Button from 'react-bootstrap/Button';
 import { View, TextInput, TouchableOpacity, Image, Text, Linking } from 'react-native-web'
 const Home = () => (
+
+
   <div style={{ backgroundColor: '#3f51b5', minHeight: '100vh' }}>
 
     <Head>
       <title>Bayaq</title>
       <link rel="icon" href="/favicon.ico" />
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-115169227-7"></script>
+      <script>{`
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-115169227-7');
+`}
+
+      </script>
     </Head>
     <div className='parent'>
       <View style={{ paddingTop: '5vh', flexDirection: 'row' }}>
@@ -29,12 +41,12 @@ const Home = () => (
       </View>
       <View style={{ flexDirection: 'column', marginTop: 10 }}>
         <View style={{ flex: 1 }}>
-          <TouchableOpacity style={{ backgroundColor: '#429ef6', padding: 20, borderRadius: 10 }} onPress={() => Linking.openURL('https://apps.apple.com/my/app/bayaq/id1519715626')}>
+          <TouchableOpacity style={{ backgroundColor: '#429ef6', padding: 20, borderRadius: 10 }} onPress={() => Linking.openURL('/ios')}>
             <Text style={{ color: 'white', textAlign: 'center', fontWeight: 'bold' }}>Download for iOS</Text>
           </TouchableOpacity>
         </View>
         <View style={{ flex: 1, marginTop: 20 }}>
-          <TouchableOpacity style={{ backgroundColor: '#429ef6', padding: 20, borderRadius: 10 }} onPress={() => Linking.openURL('https://play.google.com/store/apps/details?id=com.bayaqapp.www')}>
+          <TouchableOpacity style={{ backgroundColor: '#429ef6', padding: 20, borderRadius: 10 }} onPress={() => Linking.openURL('/android')}>
             <Text style={{ color: 'white', textAlign: 'center', fontWeight: 'bold' }}>Download for Android</Text>
           </TouchableOpacity>
         </View>
